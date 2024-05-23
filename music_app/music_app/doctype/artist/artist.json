@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "autoname": "field:artist_name",
+ "creation": "2024-05-21 17:30:26.776913",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "artist_image",
+  "artist_name",
+  "artist_description",
+  "route",
+  "published",
+  "section_break_kket",
+  "songs"
+ ],
+ "fields": [
+  {
+   "fieldname": "artist_image",
+   "fieldtype": "Attach Image",
+   "label": "Artist Image"
+  },
+  {
+   "fieldname": "artist_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Artist Name",
+   "read_only": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "artist_description",
+   "fieldtype": "Text",
+   "label": "Artist Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "songs",
+   "fieldtype": "Table",
+   "label": "Songs",
+   "options": "Child songs"
+  },
+  {
+   "fieldname": "section_break_kket",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "artist_image",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2024-05-21 22:51:47.201865",
+ "modified_by": "Administrator",
+ "module": "Music App",
+ "name": "Artist",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Music Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "artist",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

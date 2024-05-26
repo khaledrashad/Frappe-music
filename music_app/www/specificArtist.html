@@ -14,21 +14,4 @@
     </div>
     {% endfor %}
 </div>
-
-<!-- <script>
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const params = new URLSearchParams(window.location.search);
-        const name = params.get("name");
-        console.log(name);
-        
-        const placeholders = document.querySelectorAll('.name-placeholder');
-        placeholders.forEach(placeholder => {
-            placeholder.textContent = name;
-        });
-    });
-    let x = frappe.db.sql("select name from tabArtist where name like {{ name }}")
-    console.log(x);
-</script> -->
-
 {% endblock %}

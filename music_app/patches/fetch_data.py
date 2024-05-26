@@ -36,13 +36,13 @@ def execute():
         songs_dict = json.loads(response2.text)
         song_name_array = songs_dict["response"]['songs']
         for song in song_name_array:
-            print(song["full_title"])
             if not frappe.db.exists({"doctype": "Artist_songs", "song_name": song["full_title"]}):
                 doc = frappe.get_doc({
                 "doctype":"Artist_songs",
                 "song_name": song["full_title"],
                 "release_date": song["release_date_for_display"],
-                "artist": name
+                "artist": name,
+                "song_image": song["header_image_thumbnail_url"]
             })
                 doc.insert()
                 doc= frappe.get_doc("Artist", name)

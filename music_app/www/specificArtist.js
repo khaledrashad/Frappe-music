@@ -33,7 +33,10 @@ async function loadSongs(page, name) {
     document.getElementById('page-info').innerText = `Page ${page_number} of ${totalPages}`;
     document.getElementById('prev-page').disabled = page_number === 1;
     document.getElementById('next-page').disabled = page_number === totalPages;
-}
+
+    document.getElementById('prev-page').onclick = () => loadSongs(page_number - 1, name);
+    document.getElementById('next-page').onclick = () => loadSongs(page_number + 1, name);
+    }
 
 function getUrlParameter(name) {
     const urlParams = new URLSearchParams(window.location.search);

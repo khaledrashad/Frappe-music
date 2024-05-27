@@ -1,17 +1,15 @@
-
-
 {% extends "templates/web.html" %}
+
 {% block page_content %}
 <div class="container">
-    <header class="text-center mx-auto h1"> Artist Songs</header>
-    {% for song in songs %}
-    <div>
-        <div class="songCard w-100 border border-3 p-2 m-2">
-            <h4 class="m-0 p-0">{{ song.artist }}</h4>
-            <h3 class="m-0 p-0 text-info">{{ song.song_name }}</h3>
-            <div class="name-placeholder"></div> 
-        </div>
+    <header class="text-center mx-auto h1"> The Songs</header>
+    <div id="songs-container" class="row">
     </div>
-    {% endfor %}
+    <div class="pagination-controls text-center mt-4">
+        <button id="prev-page" class="btn btn-primary" onclick="loadSongs(currentPage - 1)" disabled>Previous</button>
+        <span id="page-info"></span>
+        <button id="next-page" class="btn btn-primary" onclick="loadSongs(currentPage + 1)">Next</button>
+    </div>
+    <script src="specificArtist.js"></script>
 </div>
 {% endblock %}
